@@ -11,6 +11,7 @@ function App() {
 	const [todos, setTodos] = React.useState([])
 
 	function addTodo(){   
+	
     setTodoNumber(todoNumber + 1) 
     setComplete(false)
 		setTodos([...todos, {todoName, todoNumber, isComplete}])
@@ -37,15 +38,19 @@ function App() {
   }
 
     return (
-		<div className="App">
-			<h1>Todo List </h1>
-			<input value={todoName} placeholder="Add Todo" onChange={(e) => setTodoName(e.target.value)} />
-				<div style={{ display: 'flex', justifyContent: 'center' }}>
-				<button style={{ padding: '5px 7px'}} onClick={addTodo}>Button</button>
+		<div className="App" >
+			<div style={{ background: 'lightblue' }}>
+				<h1>Todo List </h1>
+				<input value={todoName} placeholder="Add Todo" onChange={(e) => setTodoName(e.target.value)} />
+			</div>
+				<div style={{ display: 'flex', justifyContent: 'center', padding: '2px', background: 'lightblue'}}>
+				<button style={{ padding: '5px 7px', backgroundColor: '#7CFC00', border: 'groove', borderRadius: 5 }} onClick={addTodo}>Add Todo</button>
 				</div>				
 				{
 					todos.map((todo) => (
+						<div style={{ padding: '5px 7px'}}>
 						<TodoItem key={todo.todoNumber} isComplete={todo.isComplete} number={todo.todoNumber} todo={todo.todoName} del={delTodo} mark={markComplete}/>
+						</div>
 					))
 				}				
 		</div>

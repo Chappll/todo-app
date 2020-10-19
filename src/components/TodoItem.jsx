@@ -9,10 +9,10 @@ function TodoItem(props) {
 
 
 return (
-    <div style={{flex: 3, border: '1px solid black', width: '50%', padding: '2px', justifyContent: 'center'}}>
+    <div style={{ border: '1px solid black', width: '80%', padding: '6px', margin: 'auto' , display: 'flex' , justifyContent: 'space-between', alignItems: 'center'}}>
         <input type="checkbox" onChange={() => props.mark(props.number)}/>
-        <h3 style={{ textDecoration: props.isComplete ? 'line-through' : ''}}>{props.todo}</h3>
-        <button onClick={() => props.del(props.number)}>delete</button>
+        <h3 style={{ textDecoration: props.isComplete ? 'line-through' : ''}}>{props.todo}</h3>       
+        <button onClick={() => props.del(props.number)} style={{borderRadius: 15, backgroundColor: 'red', border: 'groove' }}>delete</button>      
     </div>
 );
 
